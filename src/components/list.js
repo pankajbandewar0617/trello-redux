@@ -12,21 +12,31 @@ class List extends Component {
 
     render() {
         return (
-            <div>
-                <h1> trello list page</h1>
+            <div className="board">
+                {/* <h1> trello list page</h1> */}
                 <div className="list-group">
                     {this.props.list.map(list => (
                         <div key={list.id} className="list-item">
                             <h1>{list.name}</h1>
-                            {list.cards.map(card => (
-                                <p key={card.id} className="card-group">
-                                    {card.name}
-                                </p>
-                            ))}
-                            <button> add card</button>
+                            <div className="card-group">
+                                {list.cards.map(card => (
+                                    <div className='card-item' key={card.id}>
+                                        <p >
+                                            {card.name}
+                                        </p>
+                                        <button>edit</button>
+                                        <button className='delete'>delete</button>
+                                    </div>
+                                ))}
+                            </div>
+                            <Link to="/list/card">
+                                <button> add card</button>
+                            </Link>
                         </div>
                     ))}
-                    <button> add list</button>
+                    <Link to="/list/add">
+                        <button > add list</button>
+                    </Link>
                 </div>
             </div>
         );
