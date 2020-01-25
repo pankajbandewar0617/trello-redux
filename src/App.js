@@ -1,9 +1,9 @@
 import React from 'react';
-import List from './components/list';
-import AddList from './components/addList';
-import AddCard from './components/addCard';
-import ArchieveList from './components/archieveList';
-import EditList from './components/editList';
+import List from './components/list/getList';
+import AddList from './components/list/addList';
+import ArchieveList from './components/list/archieveList';
+import EditList from './components/list/editList';
+import AddCard from './components/card/addCard';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path="/list" exact component={List} />
-          <Route path="/list/add" component={AddList} />
-          <Route path="/list/card" component={AddCard} />
+          <Route path="/list/add" exact component={AddList} />
           <Route path="/list/:id/archieve" exact component={ArchieveList} />
           <Route path="/list/:id/edit" exact component={EditList} />
+          <Route path="/list/:id/card" exact component={AddCard} />
           {/* <Route path="/card/> */}
           {/* <Route /> */}
         </Switch>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 import { Link, Switch, Route, withRouter } from 'react-router-dom';
-import { editList } from './reduxComponents/action';
+import { editList } from '../reduxComponents/action';
 
 
 class EditList extends Component {

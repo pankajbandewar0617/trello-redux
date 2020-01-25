@@ -1,6 +1,6 @@
 import { put, takeLatest, all, fork } from 'redux-saga/effects';
 import { API_KEY, API_TOKEN, BOARD_ID } from '../../config.js'
-import { archieveList } from './action.js';
+// import { archieveList } from './action.js';
 
 const idBoard = BOARD_ID;
 const api = API_KEY;
@@ -33,9 +33,8 @@ function* actionWatcher1() {
 
 
 function* addOneList(data) {
-    // console.log(data)
+
     const listName = data.name
-    // console.log(listName)
     const url = `https://api.trello.com/1/lists?name=${listName}&idBoard=${idBoard}&pos=bottom&key=${api}&token=${token}`;
     const json = yield fetch(url, {
         method: 'POST'
@@ -50,10 +49,13 @@ function* actionWatcher2() {
 // ADD ONE CARD
 
 function* addOneCard(data) {
-    // console.log(data)
-    const cardName = data.name
-    // console.log(cardName)
-    // const url = `https://api.trello.com/1/cards?name=${cardName}&idList=${idList}&pos=bottom&key=${api}&token=${token}`;
+
+    const idList = data.id;
+    const cardName = data.name;
+    const url = `https://api.trello.com/1/cards?name=${cardName}&idList=${idList}&pos=bottom&key=${api}&token=${token}`;
+    const json = yield fetch(url, {
+        method: "POST"
+    })
 }
 
 function* actionWatcher3() {

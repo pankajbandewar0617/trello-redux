@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { addNewCard } from './reduxComponents/action';
+import { addNewCard } from '../reduxComponents/action';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button'
 
@@ -22,7 +22,7 @@ class Card extends Component {
                             <Button color="secondary"> delete</Button>
                         </div>
                     ))}
-                    <Link to="/list/card">
+                    <Link to={`/list/${this.props.idList}/card`}>
                         <button idList={this.props.idList}>add card</button>
                     </Link>
                 </div>

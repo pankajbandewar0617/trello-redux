@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addNewList } from './reduxComponents/action';
+import { addNewList } from '../reduxComponents/action';
 import './list.css';
 
 class AddList extends Component {

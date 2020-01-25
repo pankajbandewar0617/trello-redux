@@ -7,9 +7,9 @@ export const addNewList = (name) => ({
     name
 });
 
-export const addNewCard = (name) => ({
+export const addNewCard = (id, name) => ({
     type: "ADD_CARD",
-    name
+    id, name
 })
 
 export const archieveList = (id) => ({

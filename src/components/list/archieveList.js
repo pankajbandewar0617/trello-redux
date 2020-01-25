@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { archieveList } from './reduxComponents/action';
+import { archieveList } from '../reduxComponents/action';
 
 
 class ArchieveList extends Component {

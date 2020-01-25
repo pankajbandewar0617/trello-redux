@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addNewCard } from './reduxComponents/action';
-import './list.css';
+import { addNewCard } from '../reduxComponents/action';
 import Button from '@material-ui/core/Button';
 
 
@@ -10,9 +9,9 @@ class AddCard extends Component {
 
     passValue = e => {
         e.preventDefault();
-        console.log(this.props)
+        const id = this.props.match.params.id
         const cardName = e.target[0].value;
-        this.props.addNewCard(cardName);
+        this.props.addNewCard(id, cardName);
         this.props.history.push('/list')
     }
 
@@ -31,7 +30,6 @@ class AddCard extends Component {
                             <input
                                 type="text"
                                 placeholder="Enter Card Name..."
-                                onChange={this.takeInput}
                                 required
                             />
                             <button type="submit">add</button>
