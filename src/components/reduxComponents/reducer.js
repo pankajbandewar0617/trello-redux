@@ -16,15 +16,6 @@ const reducer = (state = initialSate, action) => {
                 list: action.json
             }
 
-        // case 'DATA DELETED':
-        //     console.log('DATA DELETED SUCCESSFULLY')
-
-        // case 'ONE_DATA':
-        //     console.log(action.json)
-        //     return {
-        //         directorName: action.json
-        //     }
-
         default:
             return state;
     }

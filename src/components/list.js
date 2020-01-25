@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import Card from './card';
+import Card from './card';
 import { getAllList } from './reduxComponents/action';
 import './list.css';
+import Button from '@material-ui/core/Button';
 
 class List extends Component {
     componentDidMount() {
@@ -13,32 +14,23 @@ class List extends Component {
     render() {
         return (
             <div className="board">
-                {/* <h1> trello list page</h1> */}
                 <div className="list-group">
                     {this.props.list.map(list => (
                         <div key={list.id} className="list-item">
-                            <h1>{list.name}</h1>
-                            <div className="card-group">
-                                {list.cards.map(card => (
-                                    <div className='card-item' key={card.id}>
-                                        <p >
-                                            {card.name}
-                                        </p>
-                                        <button>edit</button>
-                                        <button className='delete'>delete</button>
-                                    </div>
-                                ))}
-                            </div>
-                            <Link to="/list/card">
-                                <button> add card</button>
+                            <p>{list.name}</p>
+                            <Link to={`/list/${list.id}/edit`}>
+                                <Button color="primary" variant="contained" idList={list.id}>edit</Button >
+                            </Link>                            <Link to={`/list/${list.id}/archieve`}>
+                                <Button color="secondary" variant="contained" idList={list.id}>archieve</Button >
                             </Link>
+                            <Card cards={list.cards} idList={list.id} />
                         </div>
                     ))}
                     <Link to="/list/add">
-                        <button > add list</button>
+                        <Button color="secondary"> add list</Button>
                     </Link>
                 </div>
-            </div>
+            </div >
         );
     }
 }

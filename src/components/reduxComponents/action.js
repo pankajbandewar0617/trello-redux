@@ -12,18 +12,12 @@ export const addNewCard = (name) => ({
     name
 })
 
-// export const deletedata = (id) => ({
-//     type: "DELETE",
-//     id,
-// });
+export const archieveList = (id) => ({
+    type: "ARCHIEVE_LIST",
+    id,
+});
 
-// export const getOneData = (id) => ({
-//     type: "GET_ONE",
-//     id
-// });
-
-
-// export const getEditData = (id, name) => ({
-//     type: "EDIT_ONE",
-//     id, name
-// });
+export const editList = (id, name) => ({
+    type: "EDIT_LIST_NAME",
+    id, name
+})

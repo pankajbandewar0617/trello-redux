@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { Link, Switch, Route, withRouter } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import { addNewList } from './reduxComponents/action';
-import './list.css';
+import { Link, Switch, Route, withRouter } from 'react-router-dom';
+import { editList } from './reduxComponents/action';
 
-class AddList extends Component {
+
+class EditList extends Component {
 
     passValue = e => {
         e.preventDefault();
+        const id = this.props.match.params.id;
         const listName = e.target[0].value;
-        this.props.addNewList(listName);
+        this.props.editList(id, listName);
         this.props.history.push('/list')
     }
 
@@ -22,7 +24,7 @@ class AddList extends Component {
                 </Link>
 
                 <div className="list-add">
-                    <h3>Add New List</h3>
+                    <h3>Edit List Name</h3>
                     <div>
                         <form onSubmit={this.passValue}>
                             <input
@@ -48,9 +50,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    addNewList
+    editList
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AddList));
-
-// export default AddList;
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EditList));

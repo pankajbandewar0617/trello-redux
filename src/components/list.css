@@ -14,17 +14,7 @@ body {
   border-radius: 25px;
   background-color: rgb(62, 107, 122);
 }
-/* .card-group { */
-/* border: 2px solid blue; */
-/* display: flex; */
-/* } */
-.card-item {
-  /* border: 2px solid green; */
-  padding: 10px;
-  margin: 8px 4px;
-  border-radius: 10px;
-  background-color: #252c38;
-}
+
 button {
   height: 20px;
   border-radius: 20px;

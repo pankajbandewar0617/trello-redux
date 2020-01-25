@@ -1,31 +1,47 @@
 import React, { Component } from 'react';
+import { withRouter, Link } from 'react-router-dom';
+import { addNewCard } from './reduxComponents/action';
+import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button'
+
+
+import './card.css';
 
 class Card extends Component {
+
     render() {
         return (
-            <h2>Card Page</h2>
+            <div>
+                <div className="card-group">
+                    {this.props.cards.map(card => (
+                        <div className='card-item' key={card.id}>
+                            <p >
+                                {card.name}
+                            </p>
+                            <Button color="primary"> edit</Button>
+                            <Button color="secondary"> delete</Button>
+                        </div>
+                    ))}
+                    <Link to="/list/card">
+                        <button idList={this.props.idList}>add card</button>
+                    </Link>
+                </div>
+            </div>
         );
     }
 }
 
-export default Card;
 
-{
-    this.props.directors.map(data => (
-        < div key={data.id} className='director-block' id={data.id}  >
-            <div className='list-area-director'>
-                <p>{data.id}</p>
-                <p> Director: {data.Director}</p>
-            </div>
-            <div className="buttons">
-                <Link to={`/directors/${data.id}/update`}>
-                    <button className="update">Update</button>
-                </Link>
-                <Link to="/directors">
-                    <button className="update delete" onClick={this.printEvent}>Delete</button>
-                </Link>
+const mapStateToProps = state => {
+    console.log(state);
+    return {
+        list: state.list
+    };
+};
 
-            </div>
-        </ div>
-    ))
-}
+const mapDispatchToProps = {
+    addNewCard
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
+// export default Card;

@@ -1,0 +1,11 @@
+/* .card-group { */
+/* border: 2px solid blue; */
+/* display: flex; */
+/* } */
+.card-item {
+  /* border: 2px solid green; */
+  padding: 10px;
+  margin: 8px 4px;
+  border-radius: 16px;
+  background-color: #252c38;
+}

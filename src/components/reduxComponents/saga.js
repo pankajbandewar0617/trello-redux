@@ -1,5 +1,6 @@
 import { put, takeLatest, all, fork } from 'redux-saga/effects';
 import { API_KEY, API_TOKEN, BOARD_ID } from '../../config.js'
+import { archieveList } from './action.js';
 
 const idBoard = BOARD_ID;
 const api = API_KEY;
@@ -59,14 +60,46 @@ function* actionWatcher3() {
     yield takeLatest("ADD_CARD", addOneCard)
 }
 
+
+// ARCHIEVE LIST
+
+function* listArchieve(data) {
+    const idList = data.id
+    const url = `https://api.trello.com/1/lists/${idList}/?closed=true&key=${api}&token=${token}`;
+    const json = yield fetch(url, {
+        method: 'PUT'
+    })
+}
+
+function* actionWatcher4() {
+    yield takeLatest("ARCHIEVE_LIST", listArchieve)
+}
+
+
+// EDIT LIST NAME 
+
+function* editListName(data) {
+    console.log(data)
+    const idList = data.id
+    const listname = data.name
+    const url = `https://api.trello.com/1/lists/${idList}?name=${listname}&key=${api}&token=${token}`;
+    const json = yield fetch(url, {
+        method: "PUT"
+    })
+}
+
+function* actionWatcher5() {
+    yield takeLatest("EDIT_LIST_NAME", editListName)
+}
+
 export default function* rootSaga() {
     // console.log(434)
     yield all([
         fork(actionWatcher1),
         fork(actionWatcher2),
         fork(actionWatcher3),
-        // fork(actionWatcher4),
-        // fork(actionWatcher5)
+        fork(actionWatcher4),
+        fork(actionWatcher5)
     ]);
 }
 

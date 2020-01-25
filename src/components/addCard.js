@@ -3,6 +3,8 @@ import { Link, Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addNewCard } from './reduxComponents/action';
 import './list.css';
+import Button from '@material-ui/core/Button';
+
 
 class AddCard extends Component {
 
