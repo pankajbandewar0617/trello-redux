@@ -4,6 +4,8 @@ import AddList from './components/list/addList';
 import ArchieveList from './components/list/archieveList';
 import EditList from './components/list/editList';
 import AddCard from './components/card/addCard';
+import EditCard from './components/card/editCard';
+
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
           <Route path="/list/:id/archieve" exact component={ArchieveList} />
           <Route path="/list/:id/edit" exact component={EditList} />
           <Route path="/list/:id/card" exact component={AddCard} />
+          <Route path="/list/:id/card/edit" exact component={EditCard} />
           {/* <Route path="/card/> */}
           {/* <Route /> */}
         </Switch>

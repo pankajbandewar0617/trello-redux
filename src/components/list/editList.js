@@ -32,7 +32,7 @@ class EditList extends Component {
                                 placeholder="Enter List Name..."
                                 required
                             />
-                            <button type="submit">add</button>
+                            <button type="submit">submit</button>
                         </form>
                     </div>
                 </div>

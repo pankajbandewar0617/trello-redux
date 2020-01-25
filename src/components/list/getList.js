@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Card from '../card/card';
+import Card from '../card/getCard';
 import { getAllList, editList } from '../reduxComponents/action';
 import './list.css';
 import Button from '@material-ui/core/Button';

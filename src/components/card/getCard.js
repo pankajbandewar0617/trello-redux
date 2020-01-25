@@ -18,8 +18,12 @@ class Card extends Component {
                             <p >
                                 {card.name}
                             </p>
-                            <Button color="primary"> edit</Button>
-                            <Button color="secondary"> delete</Button>
+                            <Link to={`/list/${card.id}/card/edit`}>
+                                <Button color="primary">edit</Button>
+                            </Link>
+                            <Link to={`/list/${this.props.idList}/card`}>
+                                <Button color="secondary"> delete</Button>
+                            </Link>
                         </div>
                     ))}
                     <Link to={`/list/${this.props.idList}/card`}>
@@ -33,7 +37,7 @@ class Card extends Component {
 
 
 const mapStateToProps = state => {
-    console.log(state);
+    // console.log(state);
     return {
         list: state.list
     };
