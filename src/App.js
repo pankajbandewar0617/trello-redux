@@ -33,7 +33,7 @@ function Home() {
     <div>
       <h1> Trello</h1>
       <Link to="/list">
-        <button>Go to List</button>
+        <button>Go to Trello</button>
       </Link>
     </div>
   )

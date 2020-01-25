@@ -1,6 +1,5 @@
-import { put, takeLatest, all, fork } from 'redux-saga/effects';
+import { put, takeLatest, all, fork, call } from 'redux-saga/effects';
 import { API_KEY, API_TOKEN, BOARD_ID } from '../../config.js';
-import deleteCard from '../card/deleteCard.js';
 
 const idBoard = BOARD_ID;
 const api = API_KEY;
@@ -50,6 +49,9 @@ function* listArchieve(data) {
     const json = yield fetch(url, {
         method: 'PUT'
     })
+
+    yield call(getAllList)
+
 }
 
 function* actionWatcher3() {
@@ -66,6 +68,8 @@ function* editListName(data) {
     const json = yield fetch(url, {
         method: "PUT"
     })
+    yield call(getAllList)
+
 }
 
 function* actionWatcher4() {
@@ -100,6 +104,9 @@ function* editCardName(data) {
     const json = yield fetch(url, {
         method: "PUT"
     })
+
+    yield call(getAllList)
+
 }
 function* actionWatcher6() {
     yield takeLatest("EDIT_CARD_NAME", editCardName)
@@ -115,6 +122,9 @@ function* deleteCardFromList(data) {
     const json = yield fetch(url, {
         method: "DELETE"
     })
+
+    yield call(getAllList)
+
 }
 
 function* actionWatcher7() {

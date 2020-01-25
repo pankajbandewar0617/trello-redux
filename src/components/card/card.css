@@ -5,7 +5,20 @@
 .card-item {
   /* border: 2px solid green; */
   padding: 10px;
-  margin: 8px 4px;
+  margin: 14px 8px;
   border-radius: 16px;
-  background-color: #252c38;
+  background-color: rgba(9, 30, 66, 0.25);
+}
+
+button {
+  height: fit-content;
+  font-size: larger;
+  border-radius: 20px;
+  background-color: rgb(64, 173, 78);
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+  background-color: goldenrod;
+  color: darkslateblue;
 }

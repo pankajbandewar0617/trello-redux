@@ -1,6 +1,7 @@
 body {
-  background-color: #252c38;
-  color: rgb(252, 240, 240);
+  background-color: mediumturquoise;
+  /* color: rgb(252, 240, 240); */
+  color: #172b4d;
   padding: 70px;
 }
 .list-group {
@@ -8,22 +9,26 @@ body {
   justify-content: space-around;
 }
 .list-item {
-  border: darkgoldenrod 4px solid;
+  /* border: darkgoldenrod 4px solid; */
   min-width: 200px;
   padding: 20px;
   border-radius: 25px;
-  background-color: rgb(62, 107, 122);
+  background-color: #ebecf0;
+  margin: 0px 10px 0 10px;
+  height: 100%;
+  overflow-y: scroll;
+  max-height: 80vh;
 }
 
 button {
-  height: 20px;
+  height: fit-content;
   border-radius: 20px;
+  background-color: rgb(64, 173, 78);
   border: none;
 }
 button:hover {
   cursor: pointer;
-  background-color: goldenrod;
-  color: darkslateblue;
+  color: rgb(88, 68, 219);
 }
 .delete {
   float: right;

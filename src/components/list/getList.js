@@ -44,7 +44,7 @@ class List extends Component {
                         </div>
                     ))}
                     <Link to="/list/add">
-                        <Button color="secondary"> add list</Button>
+                        <Button color="secondary" variant="contained"> add list</Button>
                     </Link>
                 </div>
             </div >

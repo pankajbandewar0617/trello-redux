@@ -27,7 +27,7 @@ class Card extends Component {
                         </div>
                     ))}
                     <Link to={`/list/${this.props.idList}/card`}>
-                        <button idList={this.props.idList}>add card</button>
+                        <button>add card</button>
                     </Link>
                 </div>
             </div>
