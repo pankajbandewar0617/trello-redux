@@ -21,8 +21,8 @@ class Card extends Component {
                             <Link to={`/list/${card.id}/card/edit`}>
                                 <Button color="primary">edit</Button>
                             </Link>
-                            <Link to={`/list/${this.props.idList}/card`}>
-                                <Button color="secondary"> delete</Button>
+                            <Link to={`/list/${card.id}/card/delete`}>
+                                <Button color="secondary">delete</Button>
                             </Link>
                         </div>
                     ))}

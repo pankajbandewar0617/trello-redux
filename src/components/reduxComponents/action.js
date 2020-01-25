@@ -41,3 +41,8 @@ export const editCard = (id, name) => ({
 })
 
 // DELETE CARD ON LIST
+
+export const deleteCard = (id) => ({
+    type: "DELETE_CARD",
+    id,
+})
